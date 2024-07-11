@@ -6,4 +6,4 @@
 
 - Google Fonts - Roboto - Done
 
--
+- Bootstarp icons - Done
