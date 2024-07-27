@@ -250,6 +250,18 @@
       "password": "$2a$10$nqvnI/QQtqIHkcbcq.2W4.l9FBnUoGL3hmFxm8FPaluNsSR6vdu/O",
       "name": "bha",
       "id": 3
+    },
+    {
+      "email": "Bharath2001@gmail.com",
+      "password": "$2a$10$LAKTaATF/Np83D/UWZs7/etLfuzOLt.K2MXq5zeIysJsBbi/CnsN.",
+      "name": "Bharath",
+      "id": 4
+    },
+    {
+      "email": "bharath2228@gmail.com",
+      "password": "$2a$10$4ZfeLxw2mF5asKRZvUw05eCCEFoREc6Gvmzyj51DZPA.50DwXxi.e",
+      "name": "Bharath",
+      "id": 5
     }
   ]
 }
