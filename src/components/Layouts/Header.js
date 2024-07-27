@@ -36,7 +36,7 @@ export const Header = () => {
                     </span>                    
                   </Link>
                   <span onClick={() => setDropDown(!dropDown)} className="bi bi-person-circle cursor-pointer text-2xl text-gray-700 dark:text-white"></span>
-                  { dropDown && <DroppedDownLoggedIn /> }
+                  { dropDown && <DroppedDownLoggedOut /> }
               </div>
           </div>
       </nav>
