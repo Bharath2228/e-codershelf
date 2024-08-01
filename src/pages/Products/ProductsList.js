@@ -19,7 +19,7 @@ export const ProductsList = () => {
     async function fetchProducts(){
       try{
         const data = await getProductList(searchTerm);
-        intialProductList(data);
+        intialProductList(data); //eslint-disable-line
       } catch(error){
         toast.error(error.message, 
           { closeButton: true,
@@ -30,7 +30,7 @@ export const ProductsList = () => {
 
     }
     fetchProducts();
-  }, [searchTerm]);
+  }, [searchTerm]); //eslint-disable-line
 
   return (
     <main>

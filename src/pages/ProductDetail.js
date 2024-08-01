@@ -28,7 +28,7 @@ export const ProductDetail = () => {
       }
     }
     fetchProductDetail();
-  },[])
+  },[]) //eslint-disable-line
 
   useEffect(() => {
     const productInCart = cartList.find(item => item.id === product.id);
