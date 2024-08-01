@@ -23,7 +23,6 @@ export async function getProduct(id){
 export async function getFeaturedList(){
     const response = await fetch("http://localhost:8000/444/featured_products"); 
         throw { message: response.statusText, status: response.status }; //eslint-disable-line
-    }
     const data = await response.json()
 
     return data;
