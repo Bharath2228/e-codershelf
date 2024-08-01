@@ -4,9 +4,10 @@ import { useParams } from "react-router-dom";
 import { useTitle } from "../hooks/useTitle";
 import { useCart } from "../context";
 import { getProduct } from "../services";
+import { toast } from "react-toastify";
 
 export const ProductDetail = () => {
-  
+
   const { cartList, addToCart, removeFromCart } = useCart();
   const [ inCart, setInCart ] = useState(false);
   const [ product, setProduct ] = useState({});
@@ -15,8 +16,16 @@ export const ProductDetail = () => {
   
   useEffect(() => {
     async function fetchProductDetail(){
-      const data = await getProduct(id);
-      setProduct(data);
+      try{
+        const data = await getProduct(id);
+        setProduct(data);
+      } catch (error){
+        toast.error(error.message, 
+          { closeButton: true,
+            autoClose: 5000,
+            closeOnClick: true
+          });
+      }
     }
     fetchProductDetail();
   },[])

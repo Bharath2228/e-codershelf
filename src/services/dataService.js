@@ -7,6 +7,9 @@ export async function getUser(){
         }
 
     const response = await fetch(`http://localhost:8000/600/users/${ebid}`, requestOptions);
+    if(!response.ok){
+        throw { message: response.statusText, status: response.status };
+    }
     const data = await response.json();
 
     return data;
@@ -20,6 +23,9 @@ export async function getUserOrders(){
         headers: {"Content-Type": "application/json", Authorization: `Bearer ${token}`},
         
     })
+    if(!response.ok){
+        throw { message: response.statusText, status: response.status };
+    }
       const data = await response.json();
       return data;
 }
@@ -45,7 +51,9 @@ export async function createOrder( cartList, total, user){
         headers: {"Content-Type": "application/json", Authorization: `Bearer ${token}`},
         body: JSON.stringify(order)
     });
-
+    if(!response.ok){
+        throw { message: response.statusText, status: response.status };
+    }
     const data = await response.json();
     return data;
 }

@@ -5,6 +5,7 @@ import { FilterBar } from "./components/FilterBar";
 import { useTitle } from "../../hooks/useTitle";
 import { useFilter } from "../../context";
 import { getProductList } from "../../services";
+import { toast } from "react-toastify";
 
 export const ProductsList = () => {
   
@@ -16,8 +17,17 @@ export const ProductsList = () => {
 
   useEffect(() => {
     async function fetchProducts(){
-      const data = await getProductList(searchTerm);
-      intialProductList(data);
+      try{
+        const data = await getProductList(searchTerm);
+        intialProductList(data);
+      } catch(error){
+        toast.error(error.message, 
+          { closeButton: true,
+            autoClose: 5000,
+            closeOnClick: true
+          });
+      }
+
     }
     fetchProducts();
   }, [searchTerm]);

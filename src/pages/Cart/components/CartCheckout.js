@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useCart } from "../../../context"
 import { useNavigate } from "react-router-dom";
 import { createOrder, getUser } from "../../../services";
+import { toast } from "react-toastify";
 
 export const CartCheckout = ({setCheckout}) => {
 
@@ -13,8 +14,17 @@ export const CartCheckout = ({setCheckout}) => {
     useEffect(() => {
 
         async function fetchUser(){
-            const data = await getUser();
-            setUser(data);
+            try{
+                const data = await getUser();
+                setUser(data);
+            }catch (error){
+                toast.error(error.message, 
+                    { closeButton: true,
+                      autoClose: 5000,
+                      closeOnClick: true
+                    });
+            }
+
         }
 
         fetchUser();
@@ -29,6 +39,11 @@ export const CartCheckout = ({setCheckout}) => {
             navigate("/order-summary", { state: {data: data, status: true}})
         }
         catch(error){
+            toast.error(error.message, 
+                { closeButton: true,
+                  autoClose: 5000,
+                  closeOnClick: true
+                });
             navigate("/order-summary", { state: { status: false }})
         }   
     }   
