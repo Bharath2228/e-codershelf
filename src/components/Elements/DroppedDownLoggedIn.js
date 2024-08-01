@@ -1,12 +1,12 @@
 import { Link, useNavigate } from "react-router-dom"
+import { logout } from "../../services";
 
 export const DroppedDownLoggedIn = ({ setDropDown }) => {
 
     const navigate = useNavigate();
 
     function handleLogout(){
-        sessionStorage.removeItem("token");
-        sessionStorage.removeItem("ebid");
+        logout();
         setDropDown(false)
         navigate("/");
         
