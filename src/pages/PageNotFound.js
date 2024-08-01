@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+import Logo  from "../assets/Bharath's Logo.png"
 
 export const PageNotFound = () => {
     return (
@@ -6,13 +8,13 @@ export const PageNotFound = () => {
               <div className="flex flex-col items-center my-4">
                   <p className="text-7xl text-gray-700 font-bold my-10 dark:text-white text-center">404, Oops!</p>
                   <div className="max-w-xs">
-                      <img className="" src="" alt="" />
+                      <img className="" src={Logo} alt="E-CoderShelf PageNot Found" />
                   </div>
               </div>
               <div className="flex justify-center my-4">
-                  <a href="">
+                  <Link to="/">
                       <button type="button" className="w-64 text-2xl text-white bg-gradient-to-r from-blue-500 via-blue-600 to-blue-700 hover:bg-gradient-to-br font-medium rounded-lg px-5 py-2.5 text-center mr-2 mb-2">Back To Home</button>
-                  </a>
+                  </Link>
               </div>
           </section>
       </main>

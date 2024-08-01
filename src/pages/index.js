@@ -7,3 +7,5 @@ export { OrderPage } from "./Order/OrderPage"
 
 export { Login } from "./Login"
 export { Register } from "./Register"
+
+export { PageNotFound } from "./PageNotFound"
