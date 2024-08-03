@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react"
+import { toast } from "react-toastify";
 import { Rating } from "../components/Elements/Rating";
 import { useParams } from "react-router-dom";
 import { useTitle } from "../hooks/useTitle";
 import { useCart } from "../context";
 import { getProduct } from "../services";
-import { toast } from "react-toastify";
+
 
 export const ProductDetail = () => {
 
