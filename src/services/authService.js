@@ -1,47 +1,48 @@
-export async function login(authDetail){
+export async function login(authDetail) {
     const requestOptions = {
         method: "POST",
-        headers: {"content-Type": "application/json"},
-        body: JSON.stringify(authDetail)
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(authDetail),
+    };
+
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/login`, requestOptions);
+    if (!response.ok) {
+        throw new Error(`Login failed: ${response.statusText} (Status: ${response.status})`);
     }
 
-    const response = await fetch(`${process.env.REACT_APP_HOST}/login`, requestOptions);
-    if(!response.ok){
-        throw { message: response.statusText, status: response.status }; //eslint-disable-line
-    }
     const data = await response.json();
-    
-    if(data.accessToken){
+
+    if (data.accessToken) {
         sessionStorage.setItem("token", JSON.stringify(data.accessToken));
-        sessionStorage.setItem("ebid", JSON.stringify(data.user.id));
+        sessionStorage.setItem("ebid", JSON.stringify(data.user?.id)); // Use optional chaining
     }
 
     return data;
 }
 
-export async function register(authDetail){
+export async function register(authDetail) {
     const requestOptions = {
         method: "POST",
-        headers: {"content-Type": "application/json"},
-        body: JSON.stringify(authDetail)
-      }
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(authDetail),
+    };
 
-    const response = await fetch(`${process.env.REACT_APP_HOST}/register`, requestOptions);
-    if(!response.ok){
-        throw { message: response.statusText, status: response.status }; //eslint-disable-line
+    const response = await fetch(`${process.env.REACT_APP_HOST}/api/register`, requestOptions);
+    if (!response.ok) {
+        throw new Error(`Registration failed: ${response.statusText} (Status: ${response.status})`);
     }
-    const data = await response.json();
-    
 
-    if(data.accessToken){
-      sessionStorage.setItem("token", JSON.stringify(data.accessToken));
-      sessionStorage.setItem("ebid", JSON.stringify(data.user.id));
+    const data = await response.json();
+
+    if (data.accessToken) {
+        sessionStorage.setItem("token", JSON.stringify(data.accessToken));
+        sessionStorage.setItem("ebid", JSON.stringify(data.user?.id)); // Use optional chaining
     }
 
     return data;
 }
 
-export function logout(){
+export function logout() {
     sessionStorage.removeItem("token");
     sessionStorage.removeItem("ebid");
 }
