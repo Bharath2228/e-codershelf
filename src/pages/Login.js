@@ -32,8 +32,8 @@ export const Login = () => {
 
   async function handleLoginGuest(event) {
     event.preventDefault();
-
-    email.current.value = "codershelf@example.com"
+    
+    email.current.value = "codershelf@example.com";
     password.current.value = "codershelf";
 
     try{
@@ -51,8 +51,8 @@ export const Login = () => {
         });
     }
   }
-
-    return (
+    
+  return (
       <main>
         <section>
           <p className="text-2xl text-center font-semibold dark:text-slate-100 my-10 underline underline-offset-8">Login</p>
