@@ -33,7 +33,11 @@ export const Login = () => {
   async function handleLoginGuest(){
     email.current.value = "e-codershelf@example.com";
     password.current.value = "codershelf"
-    const data = await login({email: email.current.value, password: password.current.value});
+    const authDetail = {
+      email: email.current.value,
+      password: password.current.value
+    }
+    const data = await login(authDetail);
     data.accessToken ? navigate("/products") : toast.error(data)
   }
 
