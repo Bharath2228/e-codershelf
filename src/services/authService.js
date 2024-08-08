@@ -5,7 +5,7 @@ export async function login(authDetail) {
         body: JSON.stringify(authDetail),
     };
 
-    const response = await fetch(`${process.env.REACT_APP_HOST}/api/login`, requestOptions);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/login`, requestOptions);
     if (!response.ok) {
         throw new Error(`Login failed: ${response.statusText} (Status: ${response.status})`);
     }
@@ -14,7 +14,7 @@ export async function login(authDetail) {
 
     if (data.accessToken) {
         sessionStorage.setItem("token", JSON.stringify(data.accessToken));
-        sessionStorage.setItem("ebid", JSON.stringify(data.user?.id)); // Use optional chaining
+        sessionStorage.setItem("ebid", JSON.stringify(data.user.id)); 
     }
 
     return data;
@@ -27,7 +27,7 @@ export async function register(authDetail) {
         body: JSON.stringify(authDetail),
     };
 
-    const response = await fetch(`${process.env.REACT_APP_HOST}/api/register`, requestOptions);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/register`, requestOptions);
     if (!response.ok) {
         throw new Error(`Registration failed: ${response.statusText} (Status: ${response.status})`);
     }
@@ -36,7 +36,7 @@ export async function register(authDetail) {
 
     if (data.accessToken) {
         sessionStorage.setItem("token", JSON.stringify(data.accessToken));
-        sessionStorage.setItem("ebid", JSON.stringify(data.user?.id)); // Use optional chaining
+        sessionStorage.setItem("ebid", JSON.stringify(data.user.id)); 
     }
 
     return data;

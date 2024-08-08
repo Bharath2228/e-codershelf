@@ -14,7 +14,7 @@ export async function getUser() {
         },
     };
 
-    const response = await fetch(`${process.env.REACT_APP_HOST}/api/600/users/${ebid}`, requestOptions);
+    const response = await fetch(`${process.env.REACT_APP_HOST}/600/users/${ebid}`, requestOptions);
     if (!response.ok) {
         throw new Error(`Failed to fetch user: ${response.statusText} (Status: ${response.status})`);
     }
@@ -31,7 +31,7 @@ export async function getUserOrders() {
         throw new Error("Authentication token or user ID is missing.");
     }
 
-    const response = await fetch(`${process.env.REACT_APP_HOST}/api/660/orders?user.id=${ebid}`, {
+    const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders?user.id=${ebid}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export async function createOrder(cartList, total, user) {
         },
     };
 
-    const response = await fetch(`${process.env.REACT_APP_HOST}/api/660/orders`, {
+    const response = await fetch(`${process.env.REACT_APP_HOST}/660/orders`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
