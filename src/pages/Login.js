@@ -32,9 +32,9 @@ export const Login = () => {
 
   async function handleLoginGuest(event) {
     event.preventDefault();
-    
-    email.current.value = "codershelf@example.com";
-    password.current.value = "codershelf";
+
+    email.current.value = process.env.REACT_APP_GUEST_LOGIN;
+    password.current.value = process.env.REACT_APP_GUEST_PASSWORD;
 
     try{
       const authDetail = {
