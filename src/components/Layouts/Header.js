@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Search } from "../Sections/Search"
 import { DroppedDownLoggedOut, DroppedDownLoggedIn } from "../index";
 import { useCart } from "../../context";
+import logo from "../../assets/codershelf.png"
 
 export const Header = () => {
 
@@ -43,6 +44,9 @@ export const Header = () => {
       <nav className="bg-white dark:bg-gray-900">
           <div className="border-b border-slate-200 dark:border-b-0 flex flex-wrap justify-between items-center mx-auto max-w-screen-xl px-4 md:px-6 py-3">
               <Link to="/" className="flex items-center">
+                  <div className="w-10 h-8 mr-4">
+                    <img className="w-full h-full object-contain dark:bg-slate-200 text-white rounded-md" src={logo} />
+                  </div>
                   <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">E-CoderShelf</span>
               </Link>
               <div className="flex items-center relative">
