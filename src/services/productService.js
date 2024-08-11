@@ -22,6 +22,5 @@ export async function getFeaturedList() {
         throw new Error(`Error: ${response.statusText} (Status: ${response.status})`);
     }
     const data = await response.json();
-    console.log(data)
     return data;
 }
