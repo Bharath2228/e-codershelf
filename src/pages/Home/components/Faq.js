@@ -5,22 +5,22 @@ export const Faq = () => {
         {
           "id": 1,
           "question": "Why should I use E-CoderShelf?",
-          "answer": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus earum dicta nesciunt, nulla alias consequuntur cumque incidunt saepe mollitia esse! Magni praesentium delectus excepturi nostrum illo repellendus cum eius neque, aperiam dolores quaerat quis dolore magnam doloremque minus sint nemo qui necessitatibus at. Perspiciatis, corrupti cum labore quos odio porro!"
+          "answer": "E-CoderShelf is your go-to platform for discovering and purchasing top-quality coding books. We offer a carefully curated selection of titles, ensuring you have access to the most relevant and up-to-date resources. Our competitive pricing and detailed book information make it easy to find exactly what you need, whether you're a beginner or an experienced developer. With a secure and user-friendly checkout process, E-CoderShelf ensures a seamless experience from browsing to buying."
         },
         {
           "id": 2,
           "question": "Can I access my eBook on mobile?",
-          "answer": "Lorem ipsum dolor sit amet consectetur adipisicing elit. At accusamus nobis tempore perferendis qui, quam, atque reprehenderit vero quaerat, assumenda pariatur eveniet. Maxime eaque, neque corrupti ad minus repudiandae consectetur!"
+          "answer": "Yes, you can access your eBook on mobile devices through E-CoderShelf. The platform is optimized for mobile browsing, ensuring that you can easily read your purchased eBooks on your smartphone or tablet, providing flexibility and convenience wherever you are."
         },
         {
           "id": 3,
           "question": "Do you offer refunds?",
-          "answer": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse iste dolor deserunt expedita quam fugit et inventore amet pariatur. Animi."
+          "answer": "Yes, E-CoderShelf offers refunds under certain conditions. If you're not satisfied with your purchase, you can request a refund within a specified period, typically within 14 days of purchase, provided the eBook has not been significantly accessed or downloaded. Please review our refund policy on the website for detailed information and to ensure you meet the requirements for a refund."
         },
         {
           "id": 4,
-          "question": "Do you support Internation payments?",
-          "answer": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse iste dolor deserunt expedita quam fugit et inventore amet pariatur. Animi."
+          "question": "Do you support International payments?",
+          "answer": "Yes, E-CoderShelf supports international payments. We accept a variety of payment methods, including major credit cards and digital payment platforms, allowing customers from around the world to purchase books securely and conveniently."
         }
     ];
     
